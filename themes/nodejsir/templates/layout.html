@@ -1,0 +1,88 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>${context.config.title}</title>
+  
+  <meta name="description" content="${context.config.description}’">
+  <meta name="author" content="${context.config.author}">
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS: implied media="all" -->
+  <link rel="stylesheet" href="/css/blog.css">
+  
+</head>
+<body>
+  <div class="topbar"></div>
+  <div class="forkme"><a href="http://github.com/milani/nodejs.ir" target="_blank"><img src="/img/forkme.png" alt="Fork me on GitHub"></a></div>
+  <header>
+    <div class="logo"><img src="/img/logo-dark.png" alt="بلاگ.ند"/></div>
+  </header>
+  <div id="toc">
+    <ol id="nav">
+      <li><a href="/" title="Home">صفحه اصلی</a></li>
+      <li><a href="/blog" title="Home">بلاگ</a></li>
+      <li><a href="/archives" title="Archives">آرشیو</a></li>
+      <li><a href="/about" title="About">درباره</a></li>
+    </ol>
+  </div>
+  <div class="container">
+    <div class="contents">
+      {{html content}}
+    </div>
+    <div id="sidebar">
+        <form name="nabe-search" class="nabe-search" action="/search/articles/" method="post">
+          <p>جستجو</p>
+          <p>
+            <input type="search" name="q" autocomplete="off" placeholder="جستجو" />
+          </p>
+        </form>
+        <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <footer class="clearfix">
+    <div>
+      <div class="footerLogo"><a href="/about"><img src="/img/logoBig.png" /></a></div>
+      <div class="cc"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode"><img src="/img/cc.png"/></a></div>
+      <p class="license">کلیه محتوای این سایت تحت لیسانس <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode">Creative Common</a> منتشر می شود.</p>
+    </div>
+  </footer>
+  <script type="text/javascript" src="/js/libs/jquery.js"></script>
+  <script type="text/javascript" src="/js/home/main.js"></script>
+  <script type="text/javascript">
+    (function() {
+     if(document.getElementsByTagName('pre').length > 0){
+         $.getScript('/js/home/sh_main.js',function(){
+            sh_highlightDocument('/js/home/', '.min.js');
+         });
+     }
+    })();
+  </script>
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-10798279-5']);
+  _gaq.push(['_setDomainName', '.nodejs.ir']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  </script>
+</body>
+</html>

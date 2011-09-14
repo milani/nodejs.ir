@@ -1,0 +1,41 @@
+
+<div class="page">
+  <h2 class="entry-title">About</h2>
+  <div class="entry-content">
+    <p>
+      This is an example of a page, you could edit this to put information about yourself or your site so readers know where you are 
+      coming from.  You can create as many pages like this one or sub-pages as you like and manage all of your content inside of pages folder.
+      
+      All pages are automatically decorated by the layout file.
+    </p>
+    
+    <section class="about">
+      <p>Hey, I'm about page</p>
+      
+      <p>I have access to basic data models including config and context, that's all</p>
+      
+      <h1>Test</h1>
+      <h2>Test</h2>
+      <h3>Test</h3>
+      <h4>Test</h4>
+      <h5>Test</h5>
+      <h6>Test</h6>
+      <h3>config used</h3>
+      {{each(key, value) config}}
+        {{if typeof value == 'object'}}
+          <p>${key}</p>
+          <ul>
+          {{each(so, funky) value}}
+            <li>${so}: <em>${funky}</em></li>
+          {{/each}}
+          </ul>
+        {{else}}
+        <p>${key}: <em>${value}</em></p>
+        {{/if}}
+      {{/each}}
+  
+      
+    </section>
+    
+  </div>
+</div>

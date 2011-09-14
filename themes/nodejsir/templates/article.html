@@ -1,0 +1,52 @@
+<article class="post">
+  <div class="head">
+    <h1 class="entry-title"><a href="/blog/${article.name}">${article.title}</a></h1>
+    <span class="submitted">ارسال شده توسط ${article.author} |{{if config.disqus}} <a href="/blog/${article.name}#disqus_thread" title="مشاهده نظرات">نظرات</a> |{{/if}} ${article.date}</span>
+  </div>
+  <section class="entry-content">
+    {{html content}}
+  </section>
+  
+  <dl class="entry-meta">    
+    {{if article.categories}}
+    <ol class="tags">
+      {{each(index, category) article.categories}}
+          <li><a href="/tag/${category}">${category}</a></li>
+      {{/each}}
+    </ol>
+    {{/if}}
+    <div class="clearfix"></div>
+    {{if article.revisions}}
+    <dt>ویرایش های پیشین:</dt>
+    <dd>
+      <ul class="post-revisions">
+      {{each(sha, rev) article.revisions}}
+        <li><a href="/${sha}/${article.name}" title="${rev.message}">${rev.date}</a></li>
+      {{/each}}
+      </ul>
+    </dd>
+    {{/if}}
+  </dl>
+  
+  
+  <section class="comments" style="width: 80%;">
+    {{if config.disqus}}
+      <div id="disqus_thread"></div>
+      <script>
+        (function(){
+          this.disqus_shortname = '${config.disqus}';
+          this.disqus_identifier = '/blog/${article.name}';
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        })();
+      </script>
+      <noscript><a href="http://${config.disqus}.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+    {{/if}}
+  </section>
+</article>
+
+
+

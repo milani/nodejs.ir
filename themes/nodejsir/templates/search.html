@@ -1,0 +1,13 @@
+<div class="page nabe-search-results">
+  <h2>${term}</h2>
+  
+  <ul>
+  {{each(index, article) articles}}
+    <li>
+      <a href="/blog/${article.name}">${article.title}</a>
+      <span class="date">${article.date}</span>
+    </li>
+  {{/each}}    
+  </ul>
+
+</div>

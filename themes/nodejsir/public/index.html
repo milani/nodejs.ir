@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>nodejs.ir</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link type="text/css" rel="stylesheet" href="/css/home.css" />
+    <link type="text/css" rel="stylesheet" href="/css/sh_vim-dark.css" />
+    <!--[if lt IE 9 ]><style>body{ font-family: times, Times New Roman, times-roman, serif;}</style><![endif]-->
+  </head>
+  <body>
+  <div class="container">
+    <div id="toc">
+      <ol>
+        <li><a href="#intro">معرفی</a></li>
+        <li><a href="#download">دانلود</a></li>
+        <li><a href="#about">درباره ند</a></li>
+        <li><a href="https://github.com/joyent/node/raw/master/ChangeLog">گزارش تغییرات</a></li>
+        <li><a href="http://nodejs.org/docs/v0.4.11/api/">اسناد</a></li>
+        <br/>
+        <li><B><a href="blog">وبلاگ</a></B></li>
+        <li><B><a href="https://groups.google.com/forum/#!forum/nodejs-fa">گروه کاربری</a></B></li>
+      </ol>
+    </div>
+    <div id="content">
+      <img id="logo" src="img/logo.png" alt="node.js" width="420" height="111"/>
+      <h2 id="intro">ند چیست؟</h2>
+
+      <p>ند Framework ای است بر مبنای جاوا اسکریپت که امکان استفاده از این زبان را در سمت سرور و به منظور ایجاد برنامه های تحت شبکه فراهم می آورد.
+      </p>
+      <p>ند از I/O رویدادگرا بهره می برد  به همین دلیل بسیار سریعتر از دیگر زبان های اسکریپتی می تواند به درخواست های شبکه پاسخ دهد. همین امر باعث محبوبیت ند در طراحی برنامه های Real-time تحت وب شده است.</p>
+
+      <p>با یک مثال می توان سادگی برنامه نویسی با ند و همچنین قدرت آن را نمایش داد. در این مثال وب سروری ایجاد می شود که به درخواست ها با پیام "Hello World" پاسخ می دهد:
+      </p>
+
+<pre>
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(8124, "127.0.0.1");
+console.log('Server running at http://127.0.0.1:8124/');
+</pre>
+
+      <p>
+	برای اجرای سرور، کد را در فایلی مثلاً با نام <code>example.js</code> قرار دهید و آن را با <code>node</code> اجرا کنید:
+      </p>
+<pre class="sh_none">
+% node example.js
+Server running at http://127.0.0.1:8124/
+</pre>
+
+      <p>
+      به عنوان مثالی دیگر، می توان به سادگی یک سرور TCP ایجاد کرد که به پورت 8124 گوش می دهد و هر پیام دریافتی را اکو می کند (Echo Server):
+      </p>
+
+      <pre>
+var net = require('net');
+
+var server = net.createServer(function (socket) {
+  socket.write("Echo server\r\n");
+  socket.pipe(socket);
+})
+
+server.listen(8124, "127.0.0.1");
+</pre>
+
+      <p>
+برای یادگیری ند به زبان فارسی می توانید به وبلاگ <a href="http://blog.nodejs.ir"">ند فارسی</a> سری بزنید.
+      </p>
+
+
+      <p>
+	برای اطلاعات با شرح کامل به
+<a href="https://github.com/joyent/node/wiki">ویکی</a>
+مراجعه نمایید.
+      </p>
+
+      <h2 id="download">دانلود</h2>
+
+      <p>
+        از طریق <a href="http://github.com/joyent/node/tree/master">git</a>
+      </p>
+
+      <p>
+        ۱۳۹۰/۰۱/۱۲: 
+        <a href="http://nodejs.org/dist/node-v0.4.11.tar.gz">node-v0.4.9.tar.gz</a>
+        (<a href="http://nodejs.org/docs/v0.4.11/api/">اسناد</a>)
+      </p>
+
+      <p>تاریخچه: <a href="http://nodejs.org/dist">ورژن‌ها</a>، <a href="http://nodejs.org/docs">اسناد</a></p>
+
+      <p>چگونگی نصب ند را در <a href="http://blog.nodejs.ir/node/2">اینجا</a> ببینید.</p>
+
+      <h2 id="about">درباره ند</h2>
+
+      <p>
+	هدف ند، بدست دادن راهی ساده برای ساخت برنامه های قابل گسترشِ تحت شبکه است. در مثال وب سرور "Hello World" که در بالا از نظر گذشت، تعداد زیادی از کانکشن ها به طور همزمان قابل پردازش اند. ند ( از طریق <code>epoll</code>، <code>kqueue</code>،
+        <code class="sh_none">/dev/poll</code>، یا <code>select</code> ) به سیستم عامل فرمان می دهد که هر زمان کانکشن جدیدی ایجاد شد، وی را باخبر سازد. سپس به حالت sleep می رود.
+ اگر اتصال جدیدی برقرار شد، سیستم عامل callback را صدا می زند. هر کانکشن در واقع تنها یک اختصاص دهی کوچکِ Heap است.
+      </p>
+
+      <p>
+این روش با مدلهای همزمانی (concurrency) کنونی که در آن از Thread های سیستم عامل استفاده می شود متفاوت است. برنامه های تحت شبکه که بر پایه Thread ها ایجاد می شوند ناکارآمد و برای استفاده، پیچیده اند. <a href="http://www.kegel.com/c10k.html">اینجا</a> و <a href="http://bulk.fefe.de/scalable-networking.pdf">اینجا</a> را ببینید.
+ند در استفاده بهینه از حافظه تحت فشارهای بالا نسبت به سیستم هایی که برای هر کانکشن ۲ مگابایت thread stack اختصاص می دهند، بسیار بهتر عمل می کند.
+گذشته از این، کاربرانِ ند دیگر نگرانی در مورد dead-lock ها ندارند&mdash;هیچ قفلی وجود ندارد. بعلاوه هیچ دستوری در ند مستقیماً کار I/O را انجام نمی دهد، بنابراین پردازه هیچگاه بلاک نمی شود. و چون هیچ چیزی بلاک نمی شود برنامه نویسان غیر حرفه ای هم می توانند سیستم های پرسرعتی بنویسند.
+      </p>
+
+      <p>
+	ند در طراحی تحت تأثیر و بسیار شبیه سیستم هایی نظیر 
+<a href="http://rubyeventmachine.com/">Event Machine</a> رابی  و یا <a href="http://twistedmatrix.com/">Twisted</a> پایتن (Python) است. ند مدل رویدادگرا را کمی جلوتر می برد&mdash; در ند چرخه ی رویداد به عنوان یک کتابخانه جدا از زبان نیست، بلکه با زبان گره خرده است. در سیستم های دیگر یک blocking call برای شروع چرخه رویداد وجود دارد.
+متد رایج این است که callback های مورد نیاز در شروع اسکریپت نوشته می شوند و در پایان سرور از طریق اجرای یک متدِ بلاک کننده یا Blocking Call شروع به کار می کند. مثلاُ در رابی داریم: <code>EventMachine::run()</code>. در ند چنین متدی برای شروع حلقه رویداد وجود ندارد. ند به سادگی پس از پردازش اسکریپت ورودی به چرخه ی رویداد وارد می شود. ند با تشخیص اینکه دیگر هیچ callback ای برای اجرا وجود ندارد از این حلقه خارج می شود. این عملکرد مانند اجرای جاوا اسکریپت در مرورگرهاست. حلقه رویداد از دید کاربر مخفی است.
+      </p>
+
+      <p>در ند HTTP یک پروتکل ممتاز است. این کتابخانه بر اساس تجربیات نویسنده آن در توسعه برنامه های تحت شبکه و وب سرورها ایجاد شدهاست. برای مثال data streaming در اکثر framework ها کاری غیر ممکن است. ند سعی کرده است که این مشکلات را در <a href="http://github.com/ry/http-parser/tree/master">پارسر HTTP</a> خود و API های مربوط به آن حل کند. این ویژگی به همراه ساختار رویدادگرای ند، می تواند مبنایی برای بهترین کتابخانه ها و Framework های تحت وب باشد.
+      </p>
+
+      <p>
+        <i>اما همزمانی در سیستم های چند پردازنده ای چطور؟ آیا thread ها برای گسترش برنامه روی کامپیوتر های چند هسته ای ضروری نیستند؟
+        </i> پردازه ها برای گسترش برنامه روی کامپیوترهای چند هسته ای ضروری اند، اما memory-sharing thread ها خیر. پایه سیستم های قابل گسترش و قابل انعطاف طراحی های non-blocking و fast networking است&mdash; که ند این کار را انجام داده است. موارد باقی مانده تنها message-passing است. در ورژن های بعدی، ند قادر خواهد بود پردازه های دیگر را بکار گیرد ( از طریق <a
+        href="http://www.whatwg.org/specs/web-workers/current-work/">Web Workers API</a> ) که به زیبایی در قالب طراحی ند می گنجد.
+      </p>
+
+      <p>
+        همچنین ببینید:
+        <ul>
+          <li><a href="http://s3.amazonaws.com/four.livejournal/20091117/jsconf.pdf">اسلایدهای</a> JSConf 2009</li>
+          <li><a href="http://nodejs.org/jsconf2010.pdf">اسلایدهای</a> JSConf 2010</li>
+          <li><a href="http://www.yuiblog.com/blog/2010/05/20/video-dahl/">ویدئو</a> سخنرانی در یاهو، ماه می ۲۰۱۰</li>
+        </ul>
+      </p>
+    </div>
+    <a href="http://no.de/"><img src="img/sponsored.png" height="58" width="120"/></a>
+    <a href="http://nodejs.ir/"><img src="img/nodejs-fa.png" height="58" width="120"/></a>
+    <div style="clear: both; font-size: 8pt">
+     Copyright 2011 Joyent, Inc
+    </div>
+    <script type="text/javascript" src="js/home/sh_main.js"></script>
+    <script type="text/javascript" src="js/home/sh_javascript.min.js"></script>
+    <script type="text/javascript">highlight(undefined, undefined, 'pre');</script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-10798279-5']);
+  _gaq.push(['_setDomainName', '.nodejs.ir']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </div>
+  </body>
+</html>

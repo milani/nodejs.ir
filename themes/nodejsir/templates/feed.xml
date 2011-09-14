@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Nodejs Blog</title>
+    <link>http://nodejs.ir/blog</link>
+    <description>Persian NodeJs Blog</description>
+	
+	{{each(index, article) articles}}
+		<item>
+			<title>${article.title}</title>
+			<link>http://nodejs.ir/blog/${article.name}</link>
+			<description>${article.markdown}</description>
+		</item>
+	{{/each}}
+  </channel>
+</rss>
