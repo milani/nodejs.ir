@@ -197,6 +197,11 @@ header .logo{
 #sidebar h1{
     font-size:120%;
 }
+.feed a{
+  color: #f49136;
+  font-weight:bold;
+  font-size:20px;
+}
 #toc,#toc-clone {
   position:relative;
   top:1em;

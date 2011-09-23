@@ -18,7 +18,8 @@
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <!-- RSS Link -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://nodejs.ir/blog/feed.xml" />
   <!-- CSS: implied media="all" -->
   <link rel="stylesheet" href="/css/blog.css">
   <link rel="stylesheet" href="/css/sh_vim-dark.css">
@@ -43,6 +44,9 @@
       {{html content}}
     </div>
     <div id="sidebar">
+        <div class="feed">
+          <a href="/blog/feed.xml"><img src="/img/feed.png"/> اشتراک فید</a>
+        </div>
         <form name="nabe-search" class="nabe-search" action="/search/articles/" method="post">
           <p>جستجو</p>
           <p>
