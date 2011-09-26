@@ -89,3 +89,7 @@ a:hover { text-decoration: underline; }
   padding: 0.2em 0;
 }
 
+.release {
+  margin: 0 2em 0 0;
+  padding: 0;
+}
