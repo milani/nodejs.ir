@@ -3,6 +3,8 @@ Author: بهرنگ نوروزی‌نیا
 Date: 2011-10-22 08:02:00 GMT+0330 (IRST)
 Categories: nodejs,npm,connect,expressjs,webworker,cluster
 
+<iframe src="http://player.vimeo.com/video/29084752?title=0&amp;byline=0&amp;portrait=0" width="432" height="240" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+
 در واحد «مدرن» در شرکت «توسن» هر هفته یک نفر یک موضوع را به دیگران آموزش می‌دهد. چند هفته پیش نوبت من بود و موضوع ارائه من هم Node.js بود. فیلم این ارائه در Vimeo گذاشته شده است. برای دیدن این فیلم به نشانی زیر بروید:
 
     http://vimeo.com/29084752
