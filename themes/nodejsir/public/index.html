@@ -84,24 +84,20 @@ server.listen(8124, "127.0.0.1");
       </p>
 
       <p>
-		  ۱۳۹۰/۰۶/۲۴ نسخه 0.4.12 (پایدار):
+		  ۱۳۹۰/۰۹/۱۱ نسخه 0.6.4 (پایدار):
       </p>
       <ul class="release">
-        <li><a href="http://nodejs.org/dist/node-v0.4.12.tar.gz">کد منبع <code>node-v0.4.12.tar.gz</code></a></li>
-        <li><a href="http://nodejs.org/docs/v0.4.12/api/">اسناد</a></li>
-      </ul>
-      <p>
-		  ۱۳۹۰/۰۷/۰۸ نسخه 0.5.8 (ناپایدار):
-      </p>
-      <ul class="release">
-        <li><a href="http://nodejs.org/dist/v0.5.8/node-v0.5.8.tar.gz">کد منبع <code>node-v0.5.8.tar.gz</code></a></li>
-        <li><a href="http://nodejs.org/dist/v0.5.8/node.exe">نسخه اجرایی ویندوز<code>node.exe</code></a>
-        <li><a href="http://nodejs.org/docs/v0.5.8/api/">اسناد</a></li>
+        <li><a href="http://nodejs.org/dist/node-v0.6.4.tar.gz">کد منبع <code>node-v0.6.4.tar.gz</code></a></li>
+        <li><a href="http://nodejs.org/dist/v0.6.4/node-v0.6.4.msi">Installer‌ ویندوز <code>node-v0.6.4.msi</code></a></li>
+        <li><a href="http://nodejs.org/dist/v0.6.4/node-v0.6.4.pkg">Installer‌ مکینتاش <code>node-v0.6.4.pkg</code></a></li>
+        <li><a href="http://nodejs.org/dist/v0.6.4/">دیگر نسخه های موجود نظیر فایل exe</a></li>
+        <li><a href="http://nodejs.org/docs/v0.6.4/api/">اسناد</a></li>
       </ul>
 
       <p>تاریخچه: <a href="http://nodejs.org/dist">ورژن‌ها</a>، <a href="http://nodejs.org/docs">اسناد</a></p>
 
-      <p>چگونگی نصب ند را در <a href="blog/nodejs-getting-started">اینجا</a> ببینید.</p>
+      <p>چگونگی نصب ند از سورس را در <a href="blog/nodejs-getting-started">اینجا</a> ببینید.</p>
+      <p>چگونگی نصب ند بر روی ویندوز را در <a href="blog/nodejs-on-windows">اینجا</a> ببینید.</p>
 
       <h2 id="about">درباره ند</h2>
 
@@ -128,8 +124,7 @@ server.listen(8124, "127.0.0.1");
 
       <p>
         <i>اما همزمانی در سیستم های چند پردازنده ای چطور؟ آیا thread ها برای گسترش برنامه روی کامپیوتر های چند هسته ای ضروری نیستند؟
-        </i> پردازه ها برای گسترش برنامه روی کامپیوترهای چند هسته ای ضروری اند، اما memory-sharing thread ها خیر. پایه سیستم های قابل گسترش و قابل انعطاف طراحی های non-blocking و fast networking است&mdash; که ند این کار را انجام داده است. موارد باقی مانده تنها message-passing است. در ورژن های بعدی، ند قادر خواهد بود پردازه های دیگر را بکار گیرد ( از طریق <a
-        href="http://www.whatwg.org/specs/web-workers/current-work/">Web Workers API</a> ) که به زیبایی در قالب طراحی ند می گنجد.
+        </i> در ند می توانید از دستور <code>child_process.fork()</code> برای شروع پروسس های جدید استفاده کنید. این پروسس های جدید به صورت موازی اجرا خواهند شد. همچنین می توانید از ماژول <a href="http://nodejs.org/docs/latest/api/cluster.html" title="اطلاعات بیشتر">cluster</a> به منظور load balancing کانکشن ها روی چند پروسس استفاده کنید.
       </p>
 
       <p>
