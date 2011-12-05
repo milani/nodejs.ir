@@ -8,7 +8,7 @@ Categories: fundamentals, javascript, mongodb, express, mongoose
 این کد یک برنامه کوچک برای ثبت log (خطا، اخطار و اطلاع‌رسانی) است.
 
 مزیت این log server در نوع ثبت و نگهداری اطلاعات logها می‌باشد که در آن از یک نوع بانک‌ اطلاعاتی غیر رابطه‌ای (Document oriented) استفاده شده است.
-
+<!--more-->
 آدرس دریافت کد:
 
 <p dir="ltr">http://afshinm.github.com/nodejs-log-server/</p>
@@ -97,7 +97,7 @@ console.log کاری مشابه در JavaScript و Firebug  انجام می‌د
 
     var reqQuery = req.query;
 
-این متغیر در حقیقت یک object حاوی تمامی paramterهای ارسال شده به برنامه است (این نمونه را در نظر بگیرید: http://localhost/?boo=1&amp;foo=2 )
+این متغیر در حقیقت یک object حاوی تمامی paramterهای ارسال شده به برنامه است (این نمونه را در نظر بگیرید: http://localhost/?boo=1&foo=2 )
 
 در خط بعدی مدل خودم را از بانک‌اطلاعات دریافت کرده‌ام:
 
