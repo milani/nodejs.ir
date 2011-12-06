@@ -3,7 +3,13 @@
   <article class="post">
     <div class="entry-header">
       <h1 class="entry-title"><a href="/blog/${article.name}">${article.title}</a></h1>
-      <span class="submitted">ارسال شده توسط ${article.author} |{{if config.disqus}} <a href="/blog/${article.name}#disqus_thread" title="مشاهده نظرات">نظرات</a> |{{/if}} ${article.date}</span>
+      <span class="submitted">ارسال شده توسط 
+      {{if article.authorLink }}
+      <a href="/author/${article.authorLink}">${article.author}</a>
+      {{else}}
+      ${article.author}
+      {{/if}}
+       |{{if config.disqus}} <a href="/blog/${article.name}#disqus_thread" title="مشاهده نظرات">نظرات</a> |{{/if}} ${article.date}</span>
     </div>
     <section class="entry-content">
       {{html article.markdown}}      
