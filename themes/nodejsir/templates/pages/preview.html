@@ -1,0 +1,38 @@
+<div class="page">
+  <h2 class="entry-title">پیش نمایش</h2>
+  <div class="entry-content">
+    <p>در این صفحه می تونید متن مورد نظرتون رو قبل از ارسال به مخزن، آزمون کنید تا از نمایش درستش مطمئن بشید.</p>
+    <div>
+      <textarea id="editor" cols="55" rows="30"></textarea>
+    </div>
+    <div>
+      <button id="preview">پیش نمایش</button>
+    </div>
+  </div>
+  <hr/>
+</div>
+<article class="post">
+  <section id="article" class="entry-content">
+  </section>
+</article>
+  <script src="/js/libs/jquery.js"></script>
+  <script src="/js/libs/showdown.js"></script>
+  <script>
+  $(function(){
+    $('#editor').keydown(function(e){
+      if(e.altKey && e.keyCode == 16){
+        $('#editor').val($('#editor').val() + '\u202D');
+      }
+      
+    });
+    var Converter = new Showdown.converter();
+    $('#preview').click(function(e){
+      var content = $('#editor').val();
+      var parsed = Converter.makeHtml(content);
+      
+      $('#article').html(parsed);
+      e.preventDefault();
+    });
+    
+  });
+  </script>

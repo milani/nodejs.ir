@@ -8,54 +8,247 @@
     font-style: normal;
 }
 body {
-  background: #353129;
+  background: #46483e;
   color: #eee;
-  font-size: 14pt;
-  line-height: 150%;
-  font-family: Yekan, times, Times New Roman, times-roman, serif;
-  margin: 0 9em 5em 0;
+  font-size: 12pt;
+  line-height: 200%;
+  font-family: Yekan, sans-serif;
+  margin: 0;
   direction:rtl;
   text-align:justify;
 }
-img {
-  padding: 3em 0 0 0;
-  border: 0;
-}
 .container{
-  width:30em;
+  width:100%;
+  border-top:6px solid #78b834;
 }
-#toc {
-  position: absolute;
-  top: 2em;
-  right: 1em;
-  width: 8em;
-  font-size: 12pt;
-  line-height: 150%;
-  padding:2px;
+.row{
+  width:100%;
+  margin-bottom:40px;
 }
-@media all and (min-height: 650px) { #toc { position: fixed; }}
-#toctitle {
-  display: none;
+.darker{
+  height:120px;
+  background:#33342d;
+  padding-top:10px;
+  margin:0;
 }
-#toc ol {
-  list-style: none;
+.main{
+  width:640px;
+  margin:0 auto;
+  text-align:center;
 }
-#toc ol, .toclevel2 {
-  margin: 0;
-  padding: 0;
-  padding-left: 1em;
+.main.col4{
+  width:720px;
 }
-#toc ol li {
-  margin: 0;
-  padding: 2px;
+.page{
+  text-align:justify;
+  width:75%;
+  margin:0 auto;
 }
-#toc a { color: #8BC84B; }
+.imgcontainer{
+	width:98%;
+	border:3px solid #CCC;
+	margin:7px 0;
+	text-align:center;
+}
+.imgcontainer img{
+	margin:10px;
+	vertical-align:middle;
+}
+.footer{
+  width:720px;
+  border-top: 1px solid #6e7363;
+  margin:0 auto;
+  font-size:10pt;
+}
+.logo{
+  width:100%;
+  text-align:center;
+  margin:0 auto;
+  padding-top:40px;
+}
+.description{
+  padding:25px 0;
+  text-align:center;
+}
+#downloadbutton{
+                  color: #46483e;
+             background: #78b834;
+                padding: 10px 25px 10px 25px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+       -o-border-radius: 4px;
+          border-radius: 4px;
+            font-weight: bold;
+}
+div#download {
+    position: absolute;
+    width: 580px;
+    text-align: center;
+    top: 0;
+    left: 50%;
+    margin-left: -290px;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding-top: 40px;
+  -webkit-box-shadow: 0 0 32px #000;
+     -moz-box-shadow: 0 0 32px #000;
+          box-shadow: 0 0 32px #000;
+    background:white;
+    display: none;
+}
 
+div#download:target {
+    display: block;
+}
+
+#download-close {
+    background: url('../img/close-downloads.png') no-repeat top right;
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    display: block;
+    top:0;
+    right:0;
+    text-indent:-999em;
+}
+
+div#download ul#installers {
+    width: 540px;
+    text-align: center;
+    margin: 0 auto;
+    background: url('../img/platform-icons.png') no-repeat top center;
+    padding-top: 65px;
+    font-family:sans-serif;
+}
+
+div#download ul#installers li {
+    list-style-type: none;
+    width: 155px;
+    padding-left: 35px;
+    float: left;
+    display: block;
+    color: #33342d;
+    font-size: 10px;
+    text-align:center;
+}
+
+div#download ul#installers li#source {
+    padding-left: 5px;
+}
+
+div#download ul#installers li a {
+    font-size: 16px;
+    padding-top: 50px;
+    margin-top: -50px;
+}
+
+div#download ul#documentation {
+    background-color: #d4d7c3;
+    padding: 20px 40px 20px 0;
+    -webkit-border-bottom-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin-bottom:0;
+}
+
+div#download ul#documentation li {
+    margin-right: 40px;
+    text-align: right;
+    color: #33342d;
+    font-size: 14px;
+    padding-bottom: 5px;
+    list-style:none;
+    line-height:1.9;
+}
+
+div#download ul#documentation li a {
+    color: #76a83f;
+}
+
+#download-logo {
+    margin-bottom: 37px;
+}
+.column{
+  float:right;
+  width:25%;
+  padding-top:20px;
+  text-align:justify;
+}
+.column.span3{
+  width:70%;
+  margin-left:20px;
+}
+.column .logo{
+  width:100%;
+  height:40px;
+  padding:0;
+}
+.column .yahoo{
+  background:url('../img/yahoo.png') no-repeat left bottom;
+}
+.column .microsoft{
+  background:url('../img/microsoft.png') no-repeat right bottom;
+}
+.column .ebay{
+  background:url('../img/ebay.png') no-repeat center bottom;
+}
+.column .linkedin{
+  background:url('../img/linkedin.png') no-repeat center bottom;
+}
+#nav{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+#nav li{
+  border-top: 1px solid #6e7363;
+  line-height:1.8;
+}
+#nav p{
+  font-size:9pt;
+  padding:0;
+  margin:0;
+  color: #c0caae;
+}
+.footer img{
+  float:right;
+  padding:8px 5px 0 10px;
+}
+.footer .notice{
+  line-height:5;
+  text-indent:-10px;
+}
 h1, h2, h3, h4 {
-  color: #CCD2BC;
-  margin: 2em 0; 
+  color: #a3d477;
+  font-size:12pt;
+  font-weight:normal;
 }
-
+h1{
+  color: #85ca49;
+}
+.nf{
+  text-align:center;
+}
+.nf h1{
+  font-size:60pt;
+  font-family:sans-serif;
+  font-weight:bold;
+  text-align:center;
+  margin:100px 0;
+}
+.nf input{
+  border: 1px solid #6e7363;
+  border-radius:5px;
+  padding:10px;
+  background-color:#fff;
+}
 h1 code, h2 code, h3 code, h4 code, 
 h1 a, h2 a, h3 a, h4 a 
 { 
@@ -67,13 +260,14 @@ pre, code {
   direction:ltr;
   font-family: Monaco, 'Andale Mono', 'Lucida Console',
 	  'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;
-  font-size: 11pt;
-  color: #C3CC88;
+  font-size: 10pt;
+  line-height:2;
+  color: #b3ca9e;
 }
 
 pre {
   padding-left: 1em;
-  border-left: 1px solid #8BC84B;
+  border-left: 1px solid #51534a;
 }
 
 dd {
@@ -81,7 +275,7 @@ dd {
   margin-right: 1em;
 }
 
-a { color: #cd5; text-decoration: none; }
+a { color: #78b834; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 .highlight {
@@ -93,3 +287,6 @@ a:hover { text-decoration: underline; }
   margin: 0 2em 0 0;
   padding: 0;
 }
+.row:before,.row:after,.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; visibility: hidden; }
+.row:after,.clearfix:after { clear: both; }
+.row,.clearfix { zoom: 1; }

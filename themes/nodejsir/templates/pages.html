@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>${context.config.title}</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link type="text/css" rel="stylesheet" href="/css/home.css" />
+    <link type="text/css" rel="stylesheet" href="/css/sh_vim-dark.css" />
+    <!--[if lt IE 9 ]><style>body{ font-family: times, Times New Roman, times-roman, serif;}</style><![endif]-->
+  </head>
+  <body>
+  <div class="container">
+    <div class="row">
+      <div class="main">
+        <div class="logo"><img src="img/logo.png" /></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="main">
+          {{html content}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="main">
+        <p><a href="/">بازگشت به صفحه اصلی</a></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="footer">
+        <img src="img/joyent.png"/>
+        <p>Node.js نام تجاری متعلق به شرکت <a href="http://joyent.com">Joyent</a> می‌باشد.</p>
+        <img src="img/nodejs-fa.png"/>
+        <p class="notice">این سایت توسط جامعه ند فارسی منتشر شده و از لحاظ حقوقی مستقل عمل می نماید.</p>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="js/home/sh_main.js"></script>
+  <script type="text/javascript" src="js/home/sh_javascript.min.js"></script>
+  <script type="text/javascript">highlight(undefined, undefined, 'pre');</script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10798279-5']);
+    _gaq.push(['_setDomainName', '.nodejs.ir']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  </body>
+</html>

@@ -10,153 +10,170 @@
   </head>
   <body>
   <div class="container">
-    <div id="toc">
-      <ol>
-        <li><a href="#intro">معرفی</a></li>
-        <li><a href="#download">دانلود</a></li>
-        <li><a href="#about">درباره ند</a></li>
-        <li><a href="https://github.com/joyent/node/raw/master/ChangeLog">گزارش تغییرات</a></li>
-        <li><a href="http://nodejs.org/docs/v0.6.4/api/">اسناد 0.6.4</a></li>
-        <br/>
-        <li><B><a href="blog">وبلاگ</a></B></li>
-        <li><B><a href="https://groups.google.com/forum/#!forum/nodejs-fa">گروه کاربری</a></B></li>
-      </ol>
+    <div class="row">
+      <div class="main">
+        <div class="logo"><img src="img/logo.png" /></div>
+        <div class="description">
+          Node.js پلتفرمی است بر مبنای <a href="http://code.google.com/p/v8">موتور جاوا اسکریپت کروم</a> که به منظور ایجاد برنامه های سریع و گسترش پذیر به وجود آمده است. Node.js از مدل رویدادگرا و non-blocking برای انجام عملیات I/O بهره می برد. از این‌رو Node.js یک پلتفرم سبک و کارا برای پیاده سازی برنامه های Real-time و مبتنی بر داده است که می توانند به راحتی در سرورهای نامتمرکز اجرا شوند. 
+        </div>
+        <a id="downloadbutton" href="#download">دانلود</a>
+      </div>
     </div>
-    <div id="content">
-      <img id="logo" src="img/logo.png" alt="node.js" width="420" height="111"/>
-      <h2 id="intro">ند چیست؟</h2>
-
-      <p>ند Framework ای است بر مبنای جاوا اسکریپت که امکان استفاده از این زبان را در سمت سرور و به منظور ایجاد برنامه های تحت شبکه فراهم می آورد.
-      </p>
-      <p>ند از I/O رویدادگرا بهره می برد  به همین دلیل بسیار سریعتر از دیگر زبان های اسکریپتی می تواند به درخواست های شبکه پاسخ دهد. همین امر باعث محبوبیت ند در طراحی برنامه های Real-time تحت وب شده است.</p>
-
-      <p>با یک مثال می توان سادگی برنامه نویسی با ند و همچنین قدرت آن را نمایش داد. در این مثال وب سروری ایجاد می شود که به درخواست ها با پیام "Hello World" پاسخ می دهد:
-      </p>
-
-<pre>
+    <div class="row darker">
+      <div class="main col4">
+        <div>چه کسانی از ند استفاده می کنند؟</div>
+        <div class="column">
+          <div class="logo microsoft"></div>
+        </div>
+        <div class="column">
+          <div class="logo linkedin"></div>
+        </div>
+        <div class="column">
+          <div class="logo ebay"></div>
+        </div>
+        <div class="column">
+          <div class="logo yahoo"></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="main col4">
+        <div class="column span3">
+          <h1>مثالی از ند: وب سرور</h1>
+          <p>این وب سرور ساده به تمام درخواست ها با پیام "hello world" پاسخ می دهد.</p>
+          <pre>
 var http = require('http');
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
-}).listen(8124, "127.0.0.1");
-console.log('Server running at http://127.0.0.1:8124/');
-</pre>
-
-      <p>
-	برای اجرای سرور، کد را در فایلی مثلاً با نام <code>example.js</code> قرار دهید و آن را با <code>node</code> اجرا کنید:
-      </p>
-<pre class="sh_none">
-% node example.js
-Server running at http://127.0.0.1:8124/
-</pre>
-
-      <p>
-      به عنوان مثالی دیگر، می توان به سادگی یک سرور TCP ایجاد کرد که به پورت 8124 گوش می دهد و هر پیام دریافتی را اکو می کند (Echo Server):
-      </p>
-
-      <pre>
+http.createServer(function(req,res){
+  res.writeHead(200,{'Content-Type':'text/plain'});
+  res.end("Hello World");
+}).listen(1337, "127.0.0.1");
+console.log("Server running at http://127.0.0.1:1337/");</pre>
+          <p>برای اجرای این وب سرور کافی است کد بالا را در فایلی با نام دلخواه مثلا example.js قرار دهید و توسط <code>node</code> آن را اجرا کنید:</p>
+          <pre>$ node example.js
+Server running at http://127.0.0.1:1337/</pre>
+          <p>به عنوان مثالی دیگر می توان سرور TCP ایجاد کرد که تمام درخواست ها را echo می نماید:</p>
+          <pre>
 var net = require('net');
 
-var server = net.createServer(function (socket) {
-  socket.write("Echo server\r\n");
+var server = net.createServer(function(socket){
+  socket.write("Echo Server:\r\n");
   socket.pipe(socket);
-})
+});
 
-server.listen(8124, "127.0.0.1");
-</pre>
-
-      <p>
-برای یادگیری ند به زبان فارسی می توانید به وبلاگ <a href="blog"">ند فارسی</a> سری بزنید.
-      </p>
-
-
-      <p>
-	برای اطلاعات با شرح کامل به
-<a href="https://github.com/joyent/node/wiki">ویکی</a>
-مراجعه نمایید.
-      </p>
-
-      <h2 id="download">دانلود</h2>
-
-      <p>
-        <a href="http://github.com/joyent/node/tree/master">مخزن git</a>
-      </p>
-
-      <p>
-		  ۱۳۹۰/۰۹/۱۱ نسخه 0.6.4 (پایدار):
-      </p>
-      <ul class="release">
-        <li><a href="http://nodejs.org/dist/node-v0.6.4.tar.gz">کد منبع <code>node-v0.6.4.tar.gz</code></a></li>
-        <li><a href="http://nodejs.org/dist/v0.6.4/node-v0.6.4.msi">Installer‌ ویندوز <code>node-v0.6.4.msi</code></a></li>
-        <li><a href="http://nodejs.org/dist/v0.6.4/node-v0.6.4.pkg">Installer‌ مکینتاش <code>node-v0.6.4.pkg</code></a></li>
-        <li><a href="http://nodejs.org/dist/v0.6.4/">دیگر نسخه های موجود نظیر فایل exe</a></li>
-        <li><a href="http://nodejs.org/docs/v0.6.4/api/">اسناد</a></li>
-      </ul>
-
-      <p>تاریخچه: <a href="http://nodejs.org/dist">ورژن‌ها</a>، <a href="http://nodejs.org/docs">اسناد</a></p>
-
-      <p>چگونگی نصب ند از سورس را در <a href="blog/nodejs-getting-started">اینجا</a> ببینید.</p>
-      <p>چگونگی نصب ند بر روی ویندوز را در <a href="blog/nodejs-on-windows">اینجا</a> ببینید.</p>
-
-      <h2 id="about">درباره ند</h2>
-
-      <p>
-	هدف ند، بدست دادن راهی ساده برای ساخت برنامه های قابل گسترشِ تحت شبکه است. در مثال وب سرور "Hello World" که در بالا از نظر گذشت، تعداد زیادی از کانکشن ها به طور همزمان قابل پردازش اند. ند ( از طریق <code>epoll</code>، <code>kqueue</code>،
-        <code class="sh_none">/dev/poll</code>، یا <code>select</code> ) به سیستم عامل فرمان می دهد که هر زمان کانکشن جدیدی ایجاد شد، وی را باخبر سازد. سپس به حالت sleep می رود.
- اگر اتصال جدیدی برقرار شد، سیستم عامل callback را صدا می زند. هر کانکشن در واقع تنها یک اختصاص دهی کوچکِ Heap است.
-      </p>
-
-      <p>
-این روش با مدلهای همزمانی (concurrency) کنونی که در آن از Thread های سیستم عامل استفاده می شود متفاوت است. برنامه های تحت شبکه که بر پایه Thread ها ایجاد می شوند ناکارآمد و برای استفاده، پیچیده اند. <a href="http://www.kegel.com/c10k.html">اینجا</a> و <a href="http://bulk.fefe.de/scalable-networking.pdf">اینجا</a> را ببینید.
-ند در استفاده بهینه از حافظه تحت فشارهای بالا نسبت به سیستم هایی که برای هر کانکشن ۲ مگابایت thread stack اختصاص می دهند، بسیار بهتر عمل می کند.
-گذشته از این، کاربرانِ ند دیگر نگرانی در مورد dead-lock ها ندارند&mdash;هیچ قفلی وجود ندارد. بعلاوه هیچ دستوری در ند مستقیماً کار I/O را انجام نمی دهد، بنابراین پردازه هیچگاه بلاک نمی شود. و چون هیچ چیزی بلاک نمی شود برنامه نویسان غیر حرفه ای هم می توانند سیستم های پرسرعتی بنویسند.
-      </p>
-
-      <p>
-	ند در طراحی تحت تأثیر و بسیار شبیه سیستم هایی نظیر 
-<a href="http://rubyeventmachine.com/">Event Machine</a> رابی  و یا <a href="http://twistedmatrix.com/">Twisted</a> پایتن (Python) است. ند مدل رویدادگرا را کمی جلوتر می برد&mdash; در ند چرخه ی رویداد به عنوان یک کتابخانه جدا از زبان نیست، بلکه با زبان گره خرده است. در سیستم های دیگر یک blocking call برای شروع چرخه رویداد وجود دارد.
-متد رایج این است که callback های مورد نیاز در شروع اسکریپت نوشته می شوند و در پایان سرور از طریق اجرای یک متدِ بلاک کننده یا Blocking Call شروع به کار می کند. مثلاُ در رابی داریم: <code>EventMachine::run()</code>. در ند چنین متدی برای شروع حلقه رویداد وجود ندارد. ند به سادگی پس از پردازش اسکریپت ورودی به چرخه ی رویداد وارد می شود. ند با تشخیص اینکه دیگر هیچ callback ای برای اجرا وجود ندارد از این حلقه خارج می شود. این عملکرد مانند اجرای جاوا اسکریپت در مرورگرهاست. حلقه رویداد از دید کاربر مخفی است.
-      </p>
-
-      <p>در ند HTTP یک پروتکل ممتاز است. این کتابخانه بر اساس تجربیات نویسنده آن در توسعه برنامه های تحت شبکه و وب سرورها ایجاد شدهاست. برای مثال data streaming در اکثر framework ها کاری غیر ممکن است. ند سعی کرده است که این مشکلات را در <a href="http://github.com/ry/http-parser/tree/master">پارسر HTTP</a> خود و API های مربوط به آن حل کند. این ویژگی به همراه ساختار رویدادگرای ند، می تواند مبنایی برای بهترین کتابخانه ها و Framework های تحت وب باشد.
-      </p>
-
-      <p>
-        <i>اما همزمانی در سیستم های چند پردازنده ای چطور؟ آیا thread ها برای گسترش برنامه روی کامپیوتر های چند هسته ای ضروری نیستند؟
-        </i> در ند می توانید از دستور <code>child_process.fork()</code> برای شروع پروسس های جدید استفاده کنید. این پروسس های جدید به صورت موازی اجرا خواهند شد. همچنین می توانید از ماژول <a href="http://nodejs.org/docs/latest/api/cluster.html" title="اطلاعات بیشتر">cluster</a> به منظور load balancing کانکشن ها روی چند پروسس استفاده کنید.
-      </p>
-
-      <p>
-        همچنین ببینید:
-        <ul>
-          <li><a href="http://s3.amazonaws.com/four.livejournal/20091117/jsconf.pdf">اسلایدهای</a> JSConf 2009</li>
-          <li><a href="http://nodejs.org/jsconf2010.pdf">اسلایدهای</a> JSConf 2010</li>
-          <li><a href="http://www.yuiblog.com/blog/2010/05/20/video-dahl/">ویدئو</a> سخنرانی در یاهو، ماه می ۲۰۱۰</li>
-        </ul>
-      </p>
+server.listen(1337,"127.0.0.1");</pre>
+        </div>
+        <div class="column">
+          <h1>با ند بیشتر آشنا شوید:</h1>
+          <ul id="nav">
+            <li><a href="/about">درباره ند</a><p>توضیحات فنی بیشتر</p></li>
+            <li><a href="/community">جامعه ند</a><p>معرفی کنفرانس ها، وبلاگ‌ها و ...</p></li>
+            <li><a href="/blog">وبلاگ</a><p>وبلاگ فارسی ند</p></li>
+            <li><a href="http://nodejs.org/docs/latest/api/index.html">اسناد</a><p>راهنمای استفاده از ند به زبان انگلیسی</p></li>
+            <li><a href="http://npmjs.org">NPM</a><p>مخزن ماژول‌های منتشر شده برای ند</p></li>
+            <!--li><a href="/logos">لوگوها</a><p>لوگوها و تصویر پس زمینه دسکتاپ</p></li-->
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </div>
     </div>
-    <a href="http://no.de/"><img src="img/sponsored.png" height="58" width="120"/></a>
-    <a href="http://nodejs.ir/"><img src="img/nodejs-fa.png" height="58" width="120"/></a>
-    <div style="clear: both; font-size: 8pt">
-     Copyright 2011 Joyent, Inc
+    <div class="row">
+      <div class="footer">
+        <img src="img/joyent.png"/>
+        <p>Node.js نام تجاری متعلق به شرکت <a href="http://joyent.com">Joyent</a> می‌باشد.</p>
+        <img src="img/nodejs-fa.png"/>
+        <p class="notice">این سایت توسط جامعه ند فارسی منتشر شده و از لحاظ حقوقی مستقل عمل می نماید.</p>
+        <div class="clearfix"></div>
+      </div>
     </div>
-    <script type="text/javascript" src="js/home/sh_main.js"></script>
-    <script type="text/javascript" src="js/home/sh_javascript.min.js"></script>
-    <script type="text/javascript">highlight(undefined, undefined, 'pre');</script>
-    <script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-10798279-5']);
-  _gaq.push(['_setDomainName', '.nodejs.ir']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
   </div>
+  <div id="download">
+        <a href="#" id="download-close">X</a>
+        <img id="download-logo" src="img/logodark.png" alt="node.js">
+        <ul id="installers" class="clearfix">
+            <li><a href="http://nodejs.org/dist/v0.6.6/node-v0.6.6.msi">Windows Installer</a><br>node-v0.6.6.msi</li>
+            <li><a href="http://nodejs.org/dist/v0.6.6/node-v0.6.6.pkg">Macintosh Installer</a><br>node-v0.6.6.pkg</li>
+            <li id="source"><a href="http://nodejs.org/dist/v0.6.6/node-v0.6.6.tar.gz">Source Code</a><br>node-v0.6.6.tar.gz</li>
+        </ul>
+        <ul id="documentation">
+            <li><a href="https://raw.github.com/joyent/node/v0.6.6/ChangeLog">فهرست تغییرات</a></li>
+            <li><a href="http://nodejs.org/docs/v0.6.6/api/index.html">اسناد و راهنمای استفاده</a></li>
+            <li><a href="http://nodejs.org/dist/v0.6.6">دیگر فایل‌ها</a></li>
+            <li><a href="https://raw.github.com/joyent/node/v0.6.6/LICENSE">License</a></li>
+            <li><a href="https://github.com/joyent/node">مخزن گیت</a></li>
+        </ul>
+    </div>
+    <script>;(function() {
+      // attach as soon as the required elements are in the DOM.
+      // don't need to wait for entire document to be ready, since we're
+      // not adding any *new* nodes to the <body>, so there's no threat
+      // of 'Invalid operation' errors in old MSIE 6.
+      document.getElementById('downloadbutton').onclick = function(e) {
+        e = e || window.event;
+        e.stopPropagation && e.stopPropagation();
+        e.cancelBubble = true;
+        // need to give the hash a tick to update
+        setTimeout(downloadDialogUpdate, 0);
+      };
+
+      document.getElementById('download-close').onclick =
+      document.documentElement.onclick = function(e) {
+        e = e || window.event;
+        if (location.hash === '#download') location.hash = '';
+        downloadDialogUpdate();
+      };
+
+      document.getElementById('download').onclick = function(e) {
+        e = e || window.event;
+        e.stopPropagation && e.stopPropagation();
+        e.cancelBubble = true;
+      };
+
+      // I keep expecting <Esc> to close the dialog...
+      document.documentElement.onkeydown = function(e) {
+        e = e || window.event;
+        var k = e.which || e.keyCode || e.keyIdentifier;
+        if (typeof k === 'string') k = k.charCodeAt(0);
+        if (k === 27) document.documentElement.onclick(e);
+      };
+
+      // hacky workaround for old ie browsers that don't support :target css.
+      function downloadDialogUpdate () {
+        var div = document.getElementById('download');
+        if (!div) return;
+        var expect = location.hash === '#download' ? 'block' : 'none';
+        var actual = div.currentStyle ? div.currentStyle.display
+                   : window.getComputedStyle
+                     ? document.defaultView.getComputedStyle(div, null).getPropertyValue('display')
+                   : null;
+
+        // it looks like a string, but it might not actually be a string.
+        // explicitly cast for MSIE 6 and 7.
+        actual = '' + actual;
+        expect = '' + expect;
+        if (actual !== expect) {
+          div.style.display = expect;
+        }
+      }
+      downloadDialogUpdate();
+    })();
+  </script>
+  <script type="text/javascript" src="js/home/sh_main.js"></script>
+  <script type="text/javascript" src="js/home/sh_javascript.min.js"></script>
+  <script type="text/javascript">highlight(undefined, undefined, 'pre');</script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-10798279-5']);
+    _gaq.push(['_setDomainName', '.nodejs.ir']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
   </body>
 </html>
