@@ -4,7 +4,7 @@ twitter: touhidarastu
 github: arastu
 website: http://arastu.ir
 
-<div style="text-align: left; direction: ltr; font-family: sans-serif;"> 
+<blink><div style="text-align: left; direction: ltr; font-family: sans-serif;"> </blink>
 Hi, my name is Touhid Arastu and I’m a web developer.
 I work as web developer for [Partotech](http://www.partotech.com "partotech") company, headquartered in [Isfahan](http://en.wikipedia.org/wiki/Isfahan "isfahan") - [Iran](http://en.wikipedia.org/wiki/Iran "iran"). 
 Now in Partotech we develop [khabarfarsi](http://khabarfarsi.com "khabarfarsi"), khabarfarsi is computer-generated news site that aggregates headlines from news sources in Iran, groups similar stories together, it is automated and intelligent [Persian](http://en.wikipedia.org/wiki/Persian_language "persian")  [news aggregator](http://en.wikipedia.org/wiki/News_aggregator "news aggregator") and news [search engine](http://en.wikipedia.org/wiki/Web_search_engine "search engin").
@@ -12,4 +12,4 @@ I deliver solutions for web and mobile platforms.
 I am an expert in php and JavaScript languages, i use [drupal](http://drupal.org "drupal") as framework for create site, portal and weblogs and im use [nodejs](http://nodejs.org "nodejs") to build scalable apps. 
 
 Sometimes, when I am really bored or superbly inspired, I write poetry and short fictions and listen to music.
-</div>
+<blink></div></blink>
