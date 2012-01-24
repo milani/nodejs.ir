@@ -12,6 +12,8 @@ Categories: install,development,development environment
 برای نصب ند بوسیله کد منبع یا source code به یک کامپایلر زبان C مثل GCC نیاز دارید. به Python 2.4  و بالاتر نیز نیاز دارید. اگر قصد دارید یک سرور https توسعه دهید به OpenSSL نیز نیاز پیدا خواهید کرد که البته ضروری نیست.
 می‌توانید برای اطلاعات بیشتر و نصب بسته هایی که در بالا اشاره شد، به سایت های [http://openssl.org](http://openssl.org "openssl") و [http://python.org](http://python.org "python") مراجعه کنید.
 
+<!--more-->
+
 در ابونتو با استفاده از دستور
 
     apt-get install build-essential g++ libssl-dev curl git python
