@@ -1,0 +1,26 @@
+<article class="post">
+  <div class="head">
+    <h1 class="entry-title"><a href="/${url}">${name}</a></h1>
+  </div>
+  <section class="entry-content">
+    <div class="biography">{{html bio}}
+      <div class="socials">
+        {{if twitter}}
+        <a href="http://twitter.com/${twitter}" target="_blank" title="follow author on twitter">توییتر</a>
+        {{/if}}
+        {{if twitter && github}} | {{/if}}
+        {{if github}}
+        <a href="https://github.com/${github}" target="_blank" title="github account">گیتهاب</a>
+        {{/if}}
+        {{if ( website && github ) || ( twitter && website ) }} | {{/if}}
+        {{if website}}
+        <a href="${website}" target="_blank" title="author's website">وب سایت</a>
+        {{/if}}
+      </div>
+    </div>
+    <div class="thumb"><img src="${image}" class="avatar avatar-78 photo"/></div>
+  </section>
+</article>
+
+
+

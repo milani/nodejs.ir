@@ -304,6 +304,22 @@ header .logo{
 	margin:4px;
 	vertical-align:middle;
 }
+.thumb{
+  padding:1px;
+  border:2px solid #ccc;
+  text-align:center;
+  float:left;
+  margin-top:16px;
+}
+.thumb img{
+  background:#FFF;
+  margin:1px;
+  vertical-align:middle;
+}
+.biography{
+  float:right;
+  width:79%;
+}
 h1 code, h2 code, h3 code, h4 code, 
 h1 a, h2 a, h3 a, h4 a 
 { 
