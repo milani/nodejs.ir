@@ -11,7 +11,7 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>${context.config.title} {{if context.article && context.article.title}} - ${context.article.title} {{/if}}</title>
+  <title>${context.config.title} {{if context.article && context.article.title}} - ${context.article.title} {{/if}}{{if context.name}} - ${context.name} {{/if}}</title>
   
   <meta name="description" content="${context.config.description}’">
   <meta name="author" content="${context.config.author}">
