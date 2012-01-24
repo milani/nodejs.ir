@@ -1,7 +1,7 @@
 Title: نصب و آماده سازی محیط توسعه ند
 Author: توحید ارسطو
 Date: 2011-09-21 00:07:00 GMT+0330 (IRDT)
-Categories: install, development environment
+Categories: install,development,development environment
 
 قبل از شروع به کار و استفاده از ند، شما باید محیطی برای توسعه آن فراهم کنید. در ادامه روش آماده کردن و نصب ند را فرا خواهیم گرفت.
 
