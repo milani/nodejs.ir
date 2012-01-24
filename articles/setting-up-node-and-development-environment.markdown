@@ -31,7 +31,7 @@ Categories: install,development,development environment
 
     tar xvfz
     node-v0.6.8.tar.gz
-    cd node.v0.6.8.tar.gz
+    cd node.v0.6.8
 
 ۲- در مرحله بعد شما باید در پوشه خانگی یک دایرکتوری برای نصب ند بسازید.
 
