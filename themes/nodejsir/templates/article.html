@@ -22,16 +22,6 @@
     </ol>
     {{/if}}
     <div class="clearfix"></div>
-    {{if article.revisions}}
-    <dt>ویرایش های پیشین:</dt>
-    <dd>
-      <ul class="post-revisions">
-      {{each(sha, rev) article.revisions}}
-        <li><a href="/${sha}/${article.name}" title="${rev.message}">${rev.date}</a></li>
-      {{/each}}
-      </ul>
-    </dd>
-    {{/if}}
   </dl>
   
   
