@@ -10,7 +10,7 @@
 body {
   background: #46483e;
   color: #eee;
-  font-size: 12pt;
+  font-size: 13px;
   line-height: 200%;
   font-family: Yekan, sans-serif;
   margin: 0;
@@ -69,17 +69,29 @@ body {
 .description{
   padding:25px 0;
   text-align:center;
+  color: #D2D8BA;
 }
 #downloadbutton{
                   color: #46483e;
              background: #78b834;
-                padding: 10px 25px 10px 25px;
+                padding: 5px 25px 5px 25px;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
        -o-border-radius: 4px;
           border-radius: 4px;
             font-weight: bold;
 }
+
+#main p.version {
+  font-size: 13px;
+  color: #D2D8BA;
+}
+
+a#downloadbutton:hover {
+  background: #73A53E;
+  text-decoration: none;
+}
+
 div#download {
     position: absolute;
     width: 580px;
