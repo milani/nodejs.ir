@@ -81,7 +81,21 @@ body {
           border-radius: 4px;
             font-weight: bold;
 }
-
+#docbutton{
+  color: #46483E;
+  background: #9A9F8B;
+  padding: 5px 25px 5px 25px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+a#docbutton:hover {
+  text-decoration: none;
+  background-color: #AAB293;
+}
 #main p.version {
   font-size: 13px;
   color: #D2D8BA;
