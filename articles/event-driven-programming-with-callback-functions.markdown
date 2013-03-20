@@ -15,10 +15,13 @@ Categories: event-driven programming, callback functions, non-blocking I/O patte
 
 در دنیای برنامه نویسی وقتی شما روی یک لینک کلیک می‌کنید یک Event اتفاق می‌افتد. حتی وقتی نتیجه یک Query که به Database فرستاده‌اید به دست می‌آید یک Event اتفاق می‌افتد. 
 در سبک برنامه نویسی غیر Event-Driven که ما از اتفاقات بهره‌ای نمی‌بردیم این Query به صورت زیر نوشته می‌شد:
+
 	result = database_query('SELECT * FROM posts WHERE id = 1');
 	do_something_with(result);
+
 در این روش ما باید منتظر بمانیم تا نتیجه Query از Database بازگردد و سپس عملیات مورد نظر خود را با نتیجه حاصل شده انجام دهیم. یعنی تا وقتی خط اول جواب ندهد جریان اجرای برنامه نمی‌تواند به خط بعدی برود. با تصور اینکه Query ما نیاز به زمان زیادی برای به دست آوردن نتیجه داشته باشد، بی‌شک جریان برنامه ما باید منتظر بماند تا نتیجه Query حاصل شود. در این مواقع در ادبیات برنامه نویسی می‌گوییم برنامه ما Block می‌شود.
 حالا بیاییم با استفاده از سبک Event-Driven همین عملیات را تکرار کنیم:
+
 	query_finished = function(result) {
 		do_something_with(result);
 	}
