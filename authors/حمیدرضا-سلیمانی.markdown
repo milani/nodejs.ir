@@ -1,0 +1,7 @@
+author: حمیدرضا سلیمانی
+ email: hamidreza.s@gmail.com
+twitter: hamidreza_181
+github: hamidreza-s
+website: www.MeloBit.com, www.Soleimani.ir
+
+حمیدرضا سلیمانی، توسعه دهنده نرم افزار، گرافیست و نوازده سه تار است. در حوزه فنی مسلط به تکنولوژی های PHP / JavaScript / BashScript / Nginx / NodeJS / Zend Framework / Doctrine می باشد. موسس و برنامه نویس سیستم مدیریت محتوای www.MeloBit.com است و همچنین در حال حاضر در شرکت ارمغان راه طلایی (www.art.co.ir) مدیر پروژه و برنامه نویس می باشد. ضمنا او جز گروه توسعه بازی سرعت بیشتر (www.SpeedUp.ir) نیز می باشد.
