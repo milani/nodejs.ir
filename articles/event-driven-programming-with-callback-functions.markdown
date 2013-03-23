@@ -1,7 +1,7 @@
 Title: برنامه نویسی Event-Driven با استفاده از توابع Callback
 Author: حمیدرضا سلیمانی
-Date: Wed 20 Mar 2013 12:37:17 PM IRST 
-Categories: event-driven programming, callback functions, non-blocking I/O pattern
+Date: Wed 20 Mar 2013 12:37:17 PM (IRST) 
+Categories: event-driven-programming, callback-functions, non-blocking-IO-pattern
 
 برنامه نویسی Event-Driven به سبک خاصی از برنامه نویسی می‌گویند که در آن جریان اجرای برنامه توسط Eventها تعیین می‌شود. در هنگام تعریف هر Event برنامه نویس موظف است برای آن Event یک Event-Handler یا Event-Callback نیز تعریف کند تا در هنگام اتفاق افتادن آن Event صدا زده شوند و وظیفه خود را انجام دهد. در مقاله‌ی فوق این مباحث را با مثال‌هایی از دنیای واقعی و همچنین کدهای برنامه نویسی توضیح می‌دهیم.
 
