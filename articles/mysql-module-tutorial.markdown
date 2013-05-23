@@ -83,11 +83,10 @@ Categories: nodejs, realtime, socket.io, mysql
 تابع `login` سمت سرور:
 
 	function login( data, socket) {
-	  var query = 'SELECT * FROM node_users';
+	  var query = 'SELECT * FROM node_users WHERE username="' + data.username + '" AND password="' + data.password + '";
 	  connection.query( query, function( error, rows, fields ) {
 	    if( error ) throw error;
-	    if( rows[i].username == data.username && rows[i].password == data.password ) {
-	      return socket.emit('loginAnswer', true)
+	    if( rows.length > 0 ) return socket.emit('loginAnswer', true)
 	    return socket.emit('loginAnswer', false)
 	  });
 	});
