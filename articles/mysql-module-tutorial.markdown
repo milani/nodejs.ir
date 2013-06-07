@@ -21,7 +21,7 @@ Categories: nodejs, realtime, socket.io, mysql
 
 اوّل باید با یک سری تابع های ماژول `mysql` آشنا بشید، پیشنهاد می کنم به صفحه ی ماژول در گیتهاب برید و بیشتر آشنا شید: [node-mysql](https://github.com/felixge/node-mysql)
 
-به کد یه نگاهی بندازید:
+به کد یه نگاهی بندازید: ( application.js )
 
 	var app   = require('http').createServer(handler),
 	    io    = require('socket.io').listen(app),
@@ -48,7 +48,7 @@ Categories: nodejs, realtime, socket.io, mysql
 	  database: 'node'
 	});
 	
-تا اینجا تنها مورد جدیدی که با `mysql` مربوطه، ۶ خط آخر هست، برای ساختن یه کانکشن `mysql` از تابع `createConnection` استفاده می کنیم‌ که یه آبجکت که اطلاعات کانکشن رو داره رو قبول می کنه، مثل `PHP` اون رو به یه مقدار می دیم چون بعدا از اون استفاده می کنیم. مرحله بعد `socket.io` رو راه میندازیم و هماهنگ می کنیم.
+تا اینجا تنها مورد جدیدی که با `mysql` مربوطه، ۶ خط آخر هست، برای ساختن یه کانکشن `mysql` از تابع `createConnection` استفاده می کنیم‌ که یه آبجکت که اطلاعات کانکشن رو داره رو قبول می کنه، مثل `PHP` اون رو به یه مقدار می دیم چون بعدا از اون استفاده می کنیم. مرحله بعد `socket.io` رو راه میندازیم و هماهنگ می کنیم. ( application.js )
 
 	io.sockets.on( 'connection', function( socket ) {
 	  socket.on( 'loginRequest', function( data ) {
@@ -56,7 +56,7 @@ Categories: nodejs, realtime, socket.io, mysql
 	  }
 	}
 
-از `socket.io` میخوایم که وقتی درخواست برای ورود اومد، تابع `login` رو اجرا کنه. برای سمت کاربر هم:
+از `socket.io` میخوایم که وقتی درخواست برای ورود اومد، تابع `login` رو اجرا کنه. برای سمت کاربر هم: ( index.html )
 
 	<!DOCTYPE html>
 	  <html>
@@ -80,7 +80,7 @@ Categories: nodejs, realtime, socket.io, mysql
 
 اصل قضیه سادس، کاربر اطلاعات رو وارد می کنه، بعد از ثبت تابع `requestLogin` اجرا میشه که بعدا تعریف می کنیم، اطلاعات برای سرور ارسال میشه، در سمت سرور تابع `login‍` اجرا میشه که در اون اطلاعات تطابق داده میشن، بعد جواب ورود برای کاربر ارسال میشه و تصمیم گرفته میشه که نسبت به پاسخ چه عملی انجام بشه.
 
-تابع `login` سمت سرور:
+تابع `login` سمت سرور: ( application.js )
 
 	function login( data, socket) {
 	  var query = 'SELECT * FROM node_users WHERE username="' + data.username + '" AND password="' + data.password + '";
@@ -93,7 +93,7 @@ Categories: nodejs, realtime, socket.io, mysql
 	
 	
 تا اینجا، وقتی اطلاعات به سرور میاد، اطلاعات با پایگاه داده تطابق داده میشن و دو حالت دارن، اگر کابر اطلاعاتش درست باشه، پاسخ مثبت فرستاده میشه به کاربر و اگر نه پاسخ منفی.
-تابع `login` و `requestLogin` سمت کاربر:
+تابع `login` و `requestLogin` سمت کاربر: ( index.html )
 	
 	function requestLogin() {
 	  var username = document.getElementById('username').value,
