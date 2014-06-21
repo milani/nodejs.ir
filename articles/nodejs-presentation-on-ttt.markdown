@@ -1,5 +1,5 @@
 Title: فیلم آشنایی با Node.js
-Author: بهرنگ نوروزی‌نیا
+Author: بهرنگ نوروزی نیا
 Date: 2011-10-22 08:02:00 GMT+0330 (IRST)
 Categories: nodejs,npm,connect,expressjs,webworker,cluster
 
