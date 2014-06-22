@@ -96,6 +96,4 @@ logNext()
 
 شاید با خود بگوییم که جالب بود ولی نیازی به دنباله ی فیبوناچی یا این جور چیز ها نداریم که بخواهیم آزانگر ها را به کار بریم. آزانگر ها خیلی بیشتر از این اند و جاوا اسکریپت را در بسیاری از زمینه ها دگرگون خواهند کرد. توانایی نگه داشتن یک تابع در میانه ی اجرا و سپس ادامه ی آن، توانایی بسیار پر کاربردی است. این نوشته تنها برای آشنایی بود. در بخش دوم کمی با کاربرد های پیشرفته ترِ آزانگر ها آشنا خواهیم شد.
 
-اگر از این نوشته خوش تان آمد، می توانید آن را [به دنبال کنندگان تان در تویتر بشناسانید](https://twitter.com/intent/tweet?url=http://behrang.github.io/javascript-generators-part1/&text=%D8%A2%D8%B4%D9%86%D8%A7%DB%8C%DB%8C%20%D8%A8%D8%A7%20%D8%A2%D8%B2%D8%A7%D9%86%DA%AF%D8%B1%20(Generator)%20%D8%AF%D8%B1%20%D8%AC%D8%A7%D9%88%D8%A7%20%D8%A7%D8%B3%DA%A9%D8%B1%DB%8C%D9%BE%D8%AA%20-%20%D8%A8%D8%AE%D8%B4%D9%90%20%DB%8C%DA%A9&via=behrangn) یا اینکه [مرا در تویتر دنبال کنید](https://twitter.com/behrangn).
-
 [dictionary]: http://dictionary.obspm.fr/?formSearchTextfield=generator&formSubmit=Search&showAll=1
