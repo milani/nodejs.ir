@@ -46,6 +46,16 @@ console.log(gen.next())
 
 نتیجه در پایان آورده شده است. هر بار که `next` فراخوانده شده، یک object باز گشته که ۲ کلید دارد: `value` که مقدار باز گشته از آزانگر را در خود دارد و `done` که می گوید آیا کارِ آزانگر پایان یافته یا نه.
 
+**ویرایش**: تابعی که با `function*` تعریف می شود، تابعِ آزانگر یا `GeneratorFunction` نامیده می شود و object ای که با فراخوانیِ آن باز می گردد یک `Generator Object` است.
+
+```js
+function* genFun() {}
+console.log(genFun.constructor.name) // "GeneratorFunction"
+
+var genObj = genFun()
+console.log(genObj.toString()) // [object Generator]
+```
+
 ## چگونه آزانگر ها را اجرا کنید
 
 Firefox در نسخه ی ۲۶ و پس از آن، از آزانگر ها پشتیبانی می کند. می توانید نمونه کدِ بالا را در console ِ آن بنویسید تا نتیجه را ببینید.
