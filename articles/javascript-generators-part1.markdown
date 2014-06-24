@@ -17,28 +17,28 @@ Categories: javascript,generator,generators,nodejs,ecmascript,ecmascript6,es6,ha
 
 ولی این توضیح ارزش آن را نشان نمی دهد. با یک نمونه کد بهتر می شود آن را فهمید.
 
+<!--more-->
+
 ## نمونه کدِ ساده
 
 کدِ زیر را ببینید تا آن را با هم بررسی کنیم.
 
-```js
-function* sample() {
-  yield 1
-  yield 2
-  return 3
-}
+    function* sample() {
+      yield 1
+      yield 2
+      return 3
+    }
 
-var gen = sample()
+    var gen = sample()
 
-console.log(gen.next())
-console.log(gen.next())
-console.log(gen.next())
+    console.log(gen.next())
+    console.log(gen.next())
+    console.log(gen.next())
 
-// output:
-// { value: 1, done: false }
-// { value: 2, done: false }
-// { value: 3, done: true }
-```
+    // output:
+    // { value: 1, done: false }
+    // { value: 2, done: false }
+    // { value: 3, done: true }
 
 نخستین چیزی که تازه است، `function*` است که یک آزانگر را تعریف می کند. در همین آزانگر، `yield` را نیز می بینید که تنها می توان آن را در آزانگر ها نوشت. در خطِ ۱ تا ۵ آزانگرِ `sample` را تعریف کرده ایم. در خطِ ۷ آن را فراخوانده ایم که object ای باز می گرداند که آن را `gen` نامیده ایم. سپس ۳ بار `next()` را روی آن فراخوانی کرده ایم.
 
@@ -48,13 +48,11 @@ console.log(gen.next())
 
 **ویرایش**: تابعی که با `function*` تعریف می شود، تابعِ آزانگر یا `GeneratorFunction` نامیده می شود و object ای که با فراخوانیِ آن باز می گردد یک `Generator Object` است.
 
-```js
-function* genFun() {}
-console.log(genFun.constructor.name) // "GeneratorFunction"
+    function* genFun() {}
+    console.log(genFun.constructor.name) // "GeneratorFunction"
 
-var genObj = genFun()
-console.log(genObj.toString()) // [object Generator]
-```
+    var genObj = genFun()
+    console.log(genObj.toString()) // [object Generator]
 
 ## چگونه آزانگر ها را اجرا کنید
 
@@ -64,41 +62,37 @@ Chrome در نسخه ی ۲۹ و پس از آن، از آزانگر ها پشتی
 
 Node.js هم در آخرین نسخه ی خود که هنوز پایدار نشده (`0.11+`) از آزانگر ها پشتیبانی می کند ولی برای فعال کردنِ آن ها باید `node` را با `--harmony-generators` یا `--harmony` اجرا کنید:
 
-```sh
-$ node --version
-v0.11.12
-$ node --harmony-generators sample.js
-{ value: 1, done: false }
-{ value: 2, done: false }
-{ value: 3, done: true }
-```
+    $ node --version
+    v0.11.12
+    $ node --harmony-generators sample.js
+    { value: 1, done: false }
+    { value: 2, done: false }
+    { value: 3, done: true }
 
 ## نمونه کدِ پیشرفته تر
 
 یک نمونه کدِ بهتر و کاربردی تر در زیر آمده است.
 
-```js
-function* fibonacci() {
-  var fn1 = 1
-    , fn2 = 1
-    , current
-  while (true) {
-    current = fn2
-    fn2 = fn1
-    fn1 = fn1 + current
-    yield current
-  }
-}
+    function* fibonacci() {
+      var fn1 = 1
+        , fn2 = 1
+        , current
+      while (true) {
+        current = fn2
+        fn2 = fn1
+        fn1 = fn1 + current
+        yield current
+      }
+    }
 
-var sequence = fibonacci()
+    var sequence = fibonacci()
 
-function logNext() {
-  console.log(sequence.next().value)
-  setTimeout(logNext, 1000)
-}
+    function logNext() {
+      console.log(sequence.next().value)
+      setTimeout(logNext, 1000)
+    }
 
-logNext()
-```
+    logNext()
 
 این آزانگرِ بی پایانِ فیبوناچی است که هر بار یک عدد را در دنباله ی فیبوناچی می آزاند. این بار آزانگر در یک چرخه ی بی پایان است. برای اجرای آن هم هر یک ثانیه یک بار `next` را روی آن فراخوانده ایم.
 
