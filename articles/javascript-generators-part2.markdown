@@ -3,7 +3,7 @@ Author: بهرنگ نوروزی نیا
 Date: 2014-06-28 13:15:00 GMT+0430 (IRDT)
 Categories: javascript,generator,generators,nodejs,ecmascript,ecmascript6,es6,harmony
 
-پیش از خواندنِ این نوشته، [بخشِ نخستِ آن را بخوانید]({% post_url 2014-06-21-javascript-generators-part1 %}).
+پیش از خواندنِ این نوشته، [بخشِ نخستِ آن را بخوانید](/blog/javascript-generators-part1).
 
 همان گونه که در بخشِ نخست دیدید، آزانگر ها به شما تواناییِ نگه داشتنِ اجرای تابع و سپس ادامه ی آن را می دهند. در اینجا می کوشم تا چگونگیِ کاربردِ آن ها برای کنترلِ روندِ اجرای برنامه را نشان دهم.
 

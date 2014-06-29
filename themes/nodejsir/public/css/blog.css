@@ -330,6 +330,8 @@ blockquote{
   margin: 1em 2em 1em 0;
 }
 code{
+    unicode-bidi: embed;
+    direction: ltr;
     padding:2px 4px 4px 4px;
     border:1px solid #EAEAEA;
     background-color:#F7F7F7;
