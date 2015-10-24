@@ -1,0 +1,8 @@
+author: علی پورزحمتکش
+email: mr.bardia@gmail.com
+twitter: ali_pourzahmatkesh
+github: ali-pourzahmatkesh
+website: http://ali-pourzahmatkesh.com
+
+علی پورزحمتکش هستم یک توسعه دهنده وب و هیبرید موبایل. فعالیتم در حوزه  کامپیوتر را از سال ۱۳۷۸ به دلیل علاقه زیاد به بازی های رایانه ای آغاز و سپس به زمینه وب روی آوردم. هم اکنون طراحی و برنامه نویسی پروژه های مبتنی بر وب و هیبرید موبایل را انجام می دهم. در بخش کلاینت با HTML ,CSS , Javascript و فریم ورک های آنها که در بخش CSS می توان به SASS, Less اشاره کرد و فریم ورک های Javascript که میتوان به jQuery, Extjs, AngularJS  اشاره کرد.
+در بخش سرور به PHP  و فریم ورک هایی مثل Zend و Laravel تسلط دارم. کد نویسی سمت سرور با Node.js را از سال ۱۳۹۱ با فریم ورک هایی مثل Express و Sails آغاز و ادامه دادم.
