@@ -1,0 +1,11 @@
+author: مسعود قربانی
+
+email: uid.mgh@gmail.com
+
+twitter: _imasoud
+
+github: imasood
+
+website: http://msud.ir
+
+یک توسعه دهنده Front-End هستم که بسیار به کارم علاقه دارم و ازش لذت می برم. بسیار علاقمند به یادگیری مباحث طراحی، برنامه نویسی و استراتژی وب هستم.
